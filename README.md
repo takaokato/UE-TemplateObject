@@ -46,7 +46,7 @@ namespace AwesomeObject_##BaseObject
 #include "xxx.gen.cpp"
 }
 ```
-This is not the complete code. For more details, please have a look at `AwesomeObject.h` file in `Plugins/AwsomePlugin/Source/AwesomePlugin/Public` folder.
+This is not the complete code. For more details, please have a look at [AwesomeObject.h](Plugins/AwesomePlugin/Source/AwesomePlugin/Public/AwesomeObject.h) and [TemplateObjectHelperMacros.h](Plugins/AwesomePlugin/Source/AwesomePlugin/Public/TemplateObjectHelperMacros.h).
 Some helper macros are defined in this header file. 
 
 Finally, `TAwesomeObject` can be used as follows:
@@ -62,4 +62,4 @@ BEGIN_AWESOMEOBJECT_CLASS_IMPLEMENTATION(AAwesomeActor, YourModuleName)
 #include "AwesomeObjectImpl.h"
 END_AWESOMEOBJECT_CLASS_IMPLEMENTATION(AAwesomeActor)
 ```
-Sample code exists in `Source/TemplateUObject/MyGameActor.h` and `Source/TemplateUObject/MyGameActor.cpp`.
+Sample code exists in [MyGameActor.h](Source/TemplateUObject/MyGameActor.h) and [MyGameActor.cpp](Source/TemplateUObject/MyGameActor.cpp).
