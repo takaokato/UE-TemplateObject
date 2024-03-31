@@ -101,7 +101,7 @@ private: \
 	static void StaticRegisterNatives##WrapperClass(); \
 	friend struct Z_Construct_UClass_##WrapperClass##_Statics; \
 public: \
-	DECLARE_CLASS(WrapperClass, BaseObjectClass, COMPILED_IN_FLAGS(0), CASTCLASS_None, PackageName, NO_API) \
+	DECLARE_CLASS(WrapperClass, BaseObjectClass, TemplateClass<FOWARD_TEMPLATE_ARGS(BaseObjectClass, WrapperClass, FriendStruct)>::StaticClassFlags, TemplateClass<FOWARD_TEMPLATE_ARGS(BaseObjectClass, WrapperClass, FriendStruct)>::StaticClassCastFlags(), PackageName, NO_API) \
 	DECLARE_SERIALIZER(WrapperClass) \
 	DEFINE_INLINE_UOBJECT_CONSTRUCTORS(WrapperClass, TemplateClass<FOWARD_TEMPLATE_ARGS(BaseObjectClass, WrapperClass, FriendStruct)>) \
 	DECLARE_UFUNCTIONS(__VA_ARGS__); \
