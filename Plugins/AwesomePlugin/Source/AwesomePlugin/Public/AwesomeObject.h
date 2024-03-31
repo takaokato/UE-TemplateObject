@@ -76,17 +76,8 @@ DEFINE_DEFAULT_TEMPLATE_UOBJECT_CLASS(UAwesomeObject, TAwesomeObject, UObject, s
 // Example:
 //
 // BEGIN_AWESOMEOBJECT_CLASS_IMPLEMENTATION(AAwesomeActor, MyGame)
-// 
-// #undef AWESOMEPLUGIN_API          // AWESOMEPLUGIN_API definition will be restored in END_AWESOMEOBJECT_CLASS_IMPLEMENTATION macro
-// #define AWESOMEPLUGIN_API NO_API  // replace plugin api with game module api (or NO_API)
-// #define Z_Construct_UClass_UObject ::Z_Construct_UClass_UObject // force global scope
-//
-// #include IMPLEMENT_AWESOMEOBJECT_CLASS_FILE  // include auto generated source file inside NameSpace_AAwesomeActor namespace
-//
-// #undef Z_Construct_UClass_UObject
-// 
+// #include "AwesomeObjectImpl.h"
 // END_AWESOMEOBJECT_CLASS_IMPLEMENTATION(AAwesomeActor)
 //
 #define BEGIN_AWESOMEOBJECT_CLASS_IMPLEMENTATION(ClassName, ModuleName) BEGIN_TEMPLATE_UOBJECT_WRAPPER_CLASS_IMPLEMENTATION(ClassName, ModuleName, AwesomePlugin, AWESOMEPLUGIN_API)
-#define IMPLEMENT_AWESOMEOBJECT_CLASS_FILE UE_INLINE_GENERATED_CPP_BY_NAME(AwesomeObject)
 #define END_AWESOMEOBJECT_CLASS_IMPLEMENTATION(ClassName) END_TEMPLATE_UOBJECT_WRAPPER_CLASS_IMPLEMENTATION(ClassName, AWESOMEPLUGIN_API)
