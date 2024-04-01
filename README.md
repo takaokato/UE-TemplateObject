@@ -60,6 +60,6 @@ In cpp file
 ```
 BEGIN_AWESOMEOBJECT_CLASS_IMPLEMENTATION(AAwesomeActor, YourModuleName)
 #include "AwesomeObjectImpl.h"
-END_AWESOMEOBJECT_CLASS_IMPLEMENTATION(AAwesomeActor)
+END_AWESOMEOBJECT_CLASS_IMPLEMENTATION()
 ```
 Sample code exists in [MyGameActor.h](Source/TemplateUObject/MyGameActor.h) and [MyGameActor.cpp](Source/TemplateUObject/MyGameActor.cpp).
