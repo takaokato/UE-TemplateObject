@@ -119,7 +119,8 @@ namespace NameSpace_##ClassName { \
 		} \
 	}; \
 } \
-typedef NameSpace_##ClassName::WrapperClass ClassName
+typedef NameSpace_##ClassName::WrapperClass ClassName; \
+template<> FORCEINLINE UClass* StaticClass<ClassName>() { return NameSpace_##ClassName::WrapperClass::StaticClass(); }
 
 #define BEGIN_TEMPLATE_UOBJECT_WRAPPER_CLASS_IMPLEMENTATION(ClassName, TargetModuleName, TemplateModuleName, TEMPLATE_API) \
 UE_PUSH_MACRO(#TEMPLATE_API) \
@@ -138,10 +139,8 @@ namespace NameSpace_##ClassName { \
 		::GetPrivateStaticClassBody(PackageName, TEXT(#ClassName) + 1, std::forward<Args>(args)...); \
 	}
 
-
-#define END_TEMPLATE_UOBJECT_WRAPPER_CLASS_IMPLEMENTATION(ClassName, TEMPLATE_API) \
+#define END_TEMPLATE_UOBJECT_WRAPPER_CLASS_IMPLEMENTATION(TEMPLATE_API) \
 } \
-template<> UClass* StaticClass<ClassName>() { return NameSpace_##ClassName::StaticClass<ClassName>(); } \
 UE_POP_MACRO(#TEMPLATE_API)
 
 namespace TemplateObjectHelper
